@@ -1,0 +1,7 @@
+#!/bin/bash
+
+FILE="dtcal"
+echo "Filename: $FILE"
+echo "Line count: $(wc -l < $FILE)"
+echo "Word count: $(wc -w < $FILE)"
+echo "Char count: $(wc -m < $FILE)"

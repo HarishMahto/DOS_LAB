@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+  echo "Please provide a file name as an argument"
+  exit 1
+fi
+
+FILE=$1
+
+if [ ! -f $FILE ]; then
+  echo "File $FILE does not exist"
+  exit 1
+fi
+
+echo "$FILE $(wc -l < $FILE) $(wc -w < $FILE) $(wc -m < $FILE)"

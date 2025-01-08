@@ -1,0 +1,77 @@
+#!/bin/bash
+
+# Check if three command line arguments are provided
+if [ $# -ne 3 ]; then
+  echo "Please provide three command line arguments: n, m, and filename"
+  exit 1
+fi
+
+# Set the values of n, m, and filename
+n=$1
+m=$2
+filename=$3
+
+# Check if the file exists
+if [ ! -f $filename ]; then
+  echo "File $filename does not exist"
+  exit 1
+fi
+
+# Check if n and m are positive integers
+if ! [[ $n =~ ^[0-9]+$ ]] || ! [[ $m =~ ^[0-9]+$ ]]; then
+  echo "n and m must be positive integers"
+  exit 1
+fi
+
+# Check if n and m are not greater than the total number of lines in the file
+total_lines=$(wc -l < $filename)
+if [ $n -gt $total_lines ] || [ $m -gt $total_lines ]; then
+  echo "n and m cannot be greater than the total number of lines in the file"
+  exit 1
+fi
+
+# Display the first n number of lines
+echo "First $n lines:"
+head -n $n $filename
+
+# Display the last m number of lines
+echo "Last $m lines:"
+tail -n $m $filename#!/bin/bash
+
+# Check if three command line arguments are provided
+if [ $# -ne 3 ]; then
+  echo "Please provide three command line arguments: n, m, and filename"
+  exit 1
+fi
+
+# Set the values of n, m, and filename
+n=$1
+m=$2
+filename=$3
+
+# Check if the file exists
+if [ ! -f $filename ]; then
+  echo "File $filename does not exist"
+  exit 1
+fi
+
+# Check if n and m are positive integers
+if ! [[ $n =~ ^[0-9]+$ ]] || ! [[ $m =~ ^[0-9]+$ ]]; then
+  echo "n and m must be positive integers"
+  exit 1
+fi
+
+# Check if n and m are not greater than the total number of lines in the file
+total_lines=$(wc -l < $filename)
+if [ $n -gt $total_lines ] || [ $m -gt $total_lines ]; then
+  echo "n and m cannot be greater than the total number of lines in the file"
+  exit 1
+fi
+
+# Display the first n number of lines
+echo "First $n lines:"
+head -n $n $filename
+
+# Display the last m number of lines
+echo "Last $m lines:"
+tail -n $m $filename

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Display the system date
+echo "Date : $(date)"
+
+# Display the calendar for March 2022
+echo "Calendar :"
+cal 3 2022

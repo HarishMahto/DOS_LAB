@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Merge the content of files a.txt, b.txt, and c.txt
+cat a.txt b.txt c.txt > temp.txt
+
+# Sort the merged content
+sort -n temp.txt > result.txt
+
+# Display the sorted output on the screen
+cat result.txt
+
+# Remove the temporary file
+rm temp.txt
